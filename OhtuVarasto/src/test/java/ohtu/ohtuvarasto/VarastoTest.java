@@ -39,6 +39,43 @@ public class VarastoTest {
     }
 
     @Test
+    public void NegatiivinenLisaysToimii() {
+        varasto.lisaaVarastoon(-8);
+
+        // saldon pitäisi pysyä nollana
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void NegatiivinenOttoToimii() {
+        varasto.otaVarastosta(-8);
+              
+
+        // saldon pitäisi pysyä nollana
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void AnnetaanKaikkiMitaVoidaan() {
+        varasto.lisaaVarastoon(5);
+        double otettuMaara = varasto.otaVarastosta(6);
+              
+
+        // saldon pitäisi pysyä nollana
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+        // saimme otettua vain maksimimäärän, ei syntynyt mitään tyhjästä
+        assertEquals(5, otettuMaara, vertailuTarkkuus);
+    }
+    
+    @Test
+    public void YlivuotoToimii() {
+        varasto.lisaaVarastoon(12);
+
+        // saldon pitäisi olla sama kuin tilavuus
+        assertEquals(varasto.getTilavuus(), varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
     public void lisaysLisaaPienentaaVapaataTilaa() {
         varasto.lisaaVarastoon(8);
 
