@@ -52,7 +52,7 @@ public class VarastoTest {
               
 
         // saldon pitäisi pysyä nollana
-        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(1, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
