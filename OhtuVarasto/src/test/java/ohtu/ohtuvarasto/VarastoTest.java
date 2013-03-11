@@ -51,7 +51,7 @@ public class VarastoTest {
         varasto.otaVarastosta(-8);
               
 
-        // saldon pitäisi pysyä nollana
+        // saldon pitäisi pysyä nollana nyt
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
