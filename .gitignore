@@ -1,7 +1,10 @@
 # files #
 ######################
+*~
+*.DS_Store
 .DS_Store
-*.xxxs
+DS_Store
+*.xxx
 
 # directories #
 ######################
